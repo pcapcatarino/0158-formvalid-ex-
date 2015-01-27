@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset=utf-8 />
@@ -7,26 +8,23 @@
 </head>
 <body>
   <form id="ex1" action="index.html" method="" accept-charset="utf-8">
-    <label for="localidade">localidade</label>
-    <input id="localidade" type="text" name="localidade" value="">
-    
-    <span class="localidade-erro">o nome deve ter mais de 4 letras
-  </span>
+  	<label for="localidade">localidade</label>
+  	<input id="localidade" type="text" name="localidade" value=""><br>
 
-    <label for="email1">Email</label>
+  	<label for="email1">Email</label>
     <input id="email1" type="email" name="email1" value=""><br>
     
-    <label for="email2">Email</label>
+    <label for="email2">Email-obrigatorio</label>
     <input id="email2" type="email" name="email2" value=""><br>
-    
- </form><input type="submit">
+    <input type="submit">
+ </form>
 <script src="jquery.js"></script>
 
   <script src="jquery-validation/dist/jquery.validate.js"></script>
   <script>
   
    
-          $("#vform").validate(
+  $("#ex1").validate(
    {
     rules: {
 
@@ -34,40 +32,34 @@
         required: true,
         minlength:4,
       },
-
-      email1: {
+      email1:{
         required: true,
-        minlength: 4,
-       
+        email: true,
       },
+
       email2:{
-          required: true,
-          email: true,
-          equalTo: "#email",
-        }
+        required: true,
+        email: true,
+        equalTo: "#email1",
+      }
 
     },
     messages:{
-
-          email1: "por favor isera um email valido"
-      
-
-         email2:{
-      required: "repeat your email",
-      minlength: jQuery.validator.format("insira pelo menos{0} charcters"),
-      equalTo: "devem ser iguais"
-         },
-         
-        },
-     
-        
-         
+      localidade: {
+        required: 'obrigatorio',
+        minlength: 'tem que ter 4 caracters',
+      },
+      email1:{
+        required:'insira um email valido'
+         minlength: jQuery.validator.format("insira pelo menos {0} caracters"),
+      }
+      email2:{
+        required: "repita o seu email",
+            equalTo: "devem ser iguais"
+      }
     }
-
-);
-
+  });
 
 </script>
-
 </body>
 </html>
