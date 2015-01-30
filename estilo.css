@@ -3,10 +3,10 @@ input{
 	font-size: 1em;
 }
 
-.nome-erro{
+.localidade-erro{
 	display: none;
 }
-.password-erro,
-.nome-erro{
+.email-erro,
+.localidade-erro{
 	display: none;
 }
