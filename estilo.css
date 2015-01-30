@@ -1,12 +1,4 @@
-body,
-input{
-	font-size: 1em;
-}
-
-.localidade-erro{
-	display: none;
-}
-.email-erro,
-.localidade-erro{
-	display: none;
+img{
+   
+   width: 200px;
 }
